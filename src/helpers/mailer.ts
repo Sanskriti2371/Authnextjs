@@ -29,10 +29,12 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
       },
     });
 
+    const baseUrl = process.env.DOMAIN || "https://authnextjs-ccxa.vercel.app";
+
     const actionUrl =
       emailType === "VERIFY"
-        ? `${process.env.DOMAIN}/verifyemail?token=${token}`
-        : `${process.env.DOMAIN}/resetpassword?token=${token}`;
+        ? `${baseUrl}/verifyemail?token=${token}`
+        : `${baseUrl}/resetpassword?token=${token}`;
 
     const mailOptions = {
       from: "hitesh@gmail.com",
