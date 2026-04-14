@@ -31,8 +31,8 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
 
     const actionUrl =
       emailType === "VERIFY"
-        ? `${process.env.domain}/verifyemail?token=${token}`
-        : `${process.env.domain}/resetpassword?token=${token}`;
+        ? `${process.env.DOMAIN}/verifyemail?token=${token}`
+        : `${process.env.DOMAIN}/resetpassword?token=${token}`;
 
     const mailOptions = {
       from: "hitesh@gmail.com",
